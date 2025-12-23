@@ -33,17 +33,17 @@ namespace WpsToPdf
 
             doc.SaveAs(pdfFilename, 32);
 
-            //doc.ExportAsFixedFormat(
-            //    pdfFilename,
-            //    PpFixedFormatType.ppFixedFormatTypePDF // 指定为PDF格式
-            //    // 其他可选参数（参数名可能与Office不完全一致，请参考WPS对象模型）：
-            //    // PpFixedFormatIntent.ppFixedFormatIntentScreen, // 意图：屏幕显示
-            //    // MsoTriState.msoFalse, // 不包含文档属性
-            //    // PpPrintRangeType.ppPrintAll, // 打印全部幻灯片
-            //    // PrintRange: null, // 打印范围
-            //    // FrameSlides: MsoTriState.msoFalse, // 是否为每张幻灯片加框
-            //    // HandoutOrder: PpPrintHandoutOrder.ppPrintHandoutHorizontalFirst,
-            //    // OutputType: PpPrintOutputType.ppPrintOutputSlides
+            //doc.ExportAsFixedFormat2(
+            //    Path: pdfFilename,
+            //    FixedFormatType: PpFixedFormatType.ppFixedFormatTypePDF
+            //// 其他可选参数（参数名可能与Office不完全一致，请参考WPS对象模型）：
+            //// PpFixedFormatIntent.ppFixedFormatIntentScreen, // 意图：屏幕显示
+            //// MsoTriState.msoFalse, // 不包含文档属性
+            //// PpPrintRangeType.ppPrintAll, // 打印全部幻灯片
+            //// PrintRange: null, // 打印范围
+            //// FrameSlides: MsoTriState.msoFalse, // 是否为每张幻灯片加框
+            //// HandoutOrder: PpPrintHandoutOrder.ppPrintHandoutHorizontalFirst,
+            //// OutputType: PpPrintOutputType.ppPrintOutputSlides
             //);
 
             doc.Close();

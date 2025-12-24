@@ -8,7 +8,7 @@ namespace WpsToPdf
         static void Main(string[] args)
         {
             // 显示Logo
-            Version();
+            //Version();
 
             // 如果不带参数，输出帮助信息
             if (args.Length == 0)
@@ -22,6 +22,7 @@ namespace WpsToPdf
             switch (args[0].ToLower().Substring(0, 2))
             {
                 case "-v":
+                    Version();
                     Environment.Exit(0);
                     return;
                 case "-h":
@@ -40,7 +41,7 @@ namespace WpsToPdf
             }
             catch (Exception ex)
             {
-                Console.WriteLine("参数中包含不正确的文件名");
+                Console.WriteLine("ERROR:参数中包含不正确的文件名");
                 Environment.Exit(2);
                 return;
             }
@@ -48,7 +49,7 @@ namespace WpsToPdf
             // 判断输入文件是否存在
             if (!File.Exists(wpsFilename))
             {
-                Console.WriteLine("错误：指定文件不存在");
+                Console.WriteLine("ERROR:指定文件不存在");
                 Environment.Exit(1);
                 return;
             }
@@ -81,14 +82,18 @@ namespace WpsToPdf
                 }
                 else
                 {
+                    Console.WriteLine("ERROR:不支持的文件格式:" + ext);
                     exitCode = -2;
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine("ERROR:" + ex.ToString());
                 exitCode = -1;
             }
-            
+
+            Console.Write("SUCESS");
+
             Environment.Exit(exitCode);
         }
 

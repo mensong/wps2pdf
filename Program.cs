@@ -59,7 +59,8 @@ namespace WpsToPdf
             try
             {
                 string ext = Path.GetExtension(wpsFilename);
-                if (ext.StartsWith(".doc", StringComparison.OrdinalIgnoreCase))
+                if (ext.StartsWith(".doc", StringComparison.OrdinalIgnoreCase) ||
+                    ext.StartsWith(".wps", StringComparison.OrdinalIgnoreCase))
                 {
                     using (WpsWord2Pdf word = new WpsWord2Pdf())
                     {
